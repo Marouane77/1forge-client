@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+version '0.0.1-SNAPSHOT'
+group 'com.oneforge'
+
+jar { baseName = '1forge-client' }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories { jcenter() }
+
+
+dependencies {
+   compile 'org.glassfish.jersey.core:jersey-client:2.27'
+   compile 'org.cache2k:cache2k-core:1.2.0.Final'
+   compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.27'
+   compile 'org.glassfish.jersey.inject:jersey-hk2:2.27'
+   testCompile(
+         'junit:junit:4.12',
+         'org.codehaus.groovy:groovy-all:2.4.9',
+         'org.spockframework:spock-core:1.1-groovy-2.4'
+         )
+}
